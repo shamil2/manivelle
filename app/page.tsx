@@ -1,65 +1,72 @@
 import Image from "next/image";
+import Button from "@/components/ui/Button";
+import BentoCard from "@/components/ui/BentoCard";
 
 export default function Home() {
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+      {/* Hero Section */}
+      <section className="w-full min-h-[80vh] flex flex-col items-center justify-center px-8 relative">
+        <div className="absolute inset-0 bg-cardboard-texture opacity-20 pointer-events-none"></div>
+        <h1 className="text-[clamp(3rem,10vw,6rem)] font-serif italic text-center max-w-5xl leading-tight">
+          Crafting the <span className="text-accent">tactile</span> future from recycled cardboard.
+        </h1>
+        <p className="mt-8 text-lg md:text-xl text-black/60 max-w-2xl text-center dark:text-zinc-400">
+          La Manivelle is an artisanal studio in Normandie designing bespoke, eco-responsible furniture.
+        </p>
+        <div className="mt-12 flex gap-4">
+          <Button variant="primary">Discover the Shop</Button>
+          <Button variant="outline">Book a Workshop</Button>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Bento Grid */}
+      <section className="w-full max-w-7xl px-8 py-24 mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[300px]">
+          <BentoCard 
+            title="Artisanal Workshops" 
+            subtitle="Learn the Craft" 
+            number="01" 
+            description="Join us in Normandie to build your own cardboard furniture."
+            className="md:col-span-2 md:row-span-2"
+          />
+          <BentoCard 
+            title="The Shop" 
+            subtitle="Ready-Made" 
+            number="02" 
+            dark
+            className="md:col-span-2"
+          />
+          <BentoCard 
+            title="Custom Commissions" 
+            subtitle="Bespoke Design" 
+            number="03" 
+            className="md:col-span-2"
+          />
         </div>
-      </main>
+      </section>
+
+      {/* Ethos Section */}
+      <section className="w-full max-w-7xl px-8 py-24 mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div>
+            <span className="text-xs uppercase tracking-widest text-accent font-bold">Our Ethos</span>
+            <h2 className="text-4xl md:text-5xl font-serif italic mt-4 mb-6">Circular by design, built to last.</h2>
+            <p className="text-lg text-black/70 mb-8 leading-relaxed dark:text-zinc-400">
+              Every piece created at La Manivelle begins as discarded material. Through precise cutting, folding, and finishing, we transform everyday cardboard into structural, durable furniture that challenges the perception of &quot;waste&quot;.
+            </p>
+            <Button variant="outline">Read our Story</Button>
+          </div>
+          <div className="grid grid-cols-2 gap-4 relative">
+             <div className="aspect-[3/4] bg-neutral-200 rounded-sm overflow-hidden relative">
+               <Image src="https://static.wixstatic.com/media/22a2c6_3cebd6f34c6b45499a4f9751e16592d7~mv2_d_3024_4032_s_4_2.jpg/v1/fill/w_560,h_752,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_5629_JPG.jpg" alt="Workshop details" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" sizes="(max-width: 768px) 100vw, 50vw" />
+             </div>
+             <div className="aspect-[3/4] bg-neutral-200 rounded-sm overflow-hidden relative translate-y-12">
+               <Image src="https://static.wixstatic.com/media/22a2c6_3af074da3ef44b488eebc9798df07205~mv2_d_3024_4032_s_4_2.jpg/v1/fill/w_147,h_196,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/22a2c6_3af074da3ef44b488eebc9798df07205~mv2_d_3024_4032_s_4_2.jpg" alt="Finished piece" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" sizes="(max-width: 768px) 100vw, 50vw" />
+             </div>
+           </div>
+        </div>
+      </section>
     </div>
   );
 }
