@@ -1,8 +1,6 @@
-import { cn } from '@/lib/utils'
-
 export default function Footer() {
   return (
-    <footer className="py-12 px-8 border-t border-black/5 flex flex-col md:flex-row justify-between items-start gap-8 opacity-40 text-sm bg-surface mt-auto">
+    <footer className="py-12 px-8 border-t border-black/5 flex flex-col md:flex-row justify-between items-start gap-8 opacity-70 text-sm bg-surface mt-auto">
       <div>
         <p>© 2026 La Manivelle</p>
         <p>Cliponville, France</p>
