@@ -12,7 +12,7 @@ interface BentoCardProps {
 
 export default function BentoCard({ title, subtitle, number, description, dark = false, className = '' }: BentoCardProps) {
   return (
-    <div className={cn("p-12 flex flex-col justify-between group relative overflow-hidden transition-all duration-500 border border-black/5 hover:-translate-y-1 hover:shadow-2xl hover:border-accent", dark ? "bg-primary text-white" : "bg-white", className)}>
+    <div className={cn("p-12 flex flex-col justify-between group relative overflow-hidden transition-all duration-500 border border-primary/5 hover:-translate-y-1 hover:shadow-2xl hover:border-accent", dark ? "bg-primary text-white" : "bg-white", className)}>
       {/* Texture overlay using the custom variable we defined in Task 2 */}
       <div className="absolute inset-0 bg-cardboard-texture opacity-5 pointer-events-none"></div>
       <div className="relative z-10">

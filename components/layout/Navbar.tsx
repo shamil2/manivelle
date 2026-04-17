@@ -30,9 +30,9 @@ export default function Navbar() {
           aria-expanded={isOpen}
           aria-label="Toggle menu"
         >
-          <span className={cn("w-6 h-0.5 bg-black transition-transform duration-300 origin-center", isOpen && "rotate-45 translate-y-2")} />
-          <span className={cn("w-6 h-0.5 bg-black transition-opacity duration-300", isOpen && "opacity-0")} />
-          <span className={cn("w-6 h-0.5 bg-black transition-transform duration-300 origin-center", isOpen && "-rotate-45 -translate-y-2")} />
+          <span className={cn("w-6 h-0.5 bg-primary transition-transform duration-300 origin-center", isOpen && "rotate-45 translate-y-2")} />
+          <span className={cn("w-6 h-0.5 bg-primary transition-opacity duration-300", isOpen && "opacity-0")} />
+          <span className={cn("w-6 h-0.5 bg-primary transition-transform duration-300 origin-center", isOpen && "-rotate-45 -translate-y-2")} />
         </button>
       </div>
 

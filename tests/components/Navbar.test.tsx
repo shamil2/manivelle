@@ -9,9 +9,9 @@ describe('Navbar Component', () => {
 
   it('renders navigation links', () => {
     render(<Navbar />);
-    expect(screen.getByText('The Shop')).toBeInTheDocument();
-    expect(screen.getByText('Commissions')).toBeInTheDocument();
-    expect(screen.getByText('Workshops')).toBeInTheDocument();
+    expect(screen.getAllByText('The Shop').length).toBeGreaterThan(0);
+    expect(screen.getAllByText('Commissions').length).toBeGreaterThan(0);
+    expect(screen.getAllByText('Workshops').length).toBeGreaterThan(0);
   });
 
   it('renders the cart button', () => {

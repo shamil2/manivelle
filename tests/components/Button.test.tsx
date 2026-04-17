@@ -14,7 +14,7 @@ describe('Button', () => {
     render(<Button variant="outline">Click Me</Button>)
     const button = screen.getByRole('button', { name: 'Click Me' })
     expect(button).toBeInTheDocument()
-    expect(button).toHaveClass('border-black/10')
+    expect(button).toHaveClass('border-primary/10')
   })
 
   it('merges custom className correctly', () => {
