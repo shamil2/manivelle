@@ -1,4 +1,32 @@
+"use client";
+
+import { useState } from "react";
+
 export default function CommissionsPage() {
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
+  if (submitted) {
+    return (
+      <div className="container mx-auto px-6 py-24 flex flex-col items-center justify-center min-h-[60vh] text-center">
+        <h1 className="font-serif text-5xl md:text-7xl mb-6 text-primary italic">Inquiry Received</h1>
+        <p className="text-xl md:text-2xl text-primary/80 mb-12 max-w-2xl font-light">
+          Thank you for sharing your vision. We&apos;ll get back to you within 2-3 business days.
+        </p>
+        <button 
+          onClick={() => setSubmitted(false)}
+          className="bg-primary text-surface px-8 py-3 font-medium hover:bg-primary/90 transition-colors"
+        >
+          Send Another Inquiry
+        </button>
+      </div>
+    );
+  }
+
   return (
     <div className="container mx-auto px-6 py-24 max-w-4xl">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
@@ -8,7 +36,7 @@ export default function CommissionsPage() {
             Every space is unique, and so is our approach. We work closely with you to design and craft bespoke cardboard furniture that fits your exact needs and aesthetic vision.
           </p>
           <p className="text-lg text-primary/80 mb-8 font-light leading-relaxed">
-            Whether it's a specific dimension for an awkward corner, or a completely original piece of functional art, tell us what you have in mind.
+            Whether it&apos;s a specific dimension for an awkward corner, or a completely original piece of functional art, tell us what you have in mind.
           </p>
           
           <div className="bg-subtle/20 p-6 border-l-2 border-accent">
@@ -27,7 +55,7 @@ export default function CommissionsPage() {
           <div className="absolute -top-3 -right-3 w-16 h-16 bg-cardboard-texture opacity-20 pointer-events-none" />
           <h2 className="text-2xl font-serif italic mb-6 text-primary">Start a Conversation</h2>
           
-          <form className="flex flex-col gap-5" onSubmit={(e) => e.preventDefault()}>
+          <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
             <div className="flex flex-col gap-2">
               <label htmlFor="name" className="text-sm font-medium text-primary">Your Name</label>
               <input 
