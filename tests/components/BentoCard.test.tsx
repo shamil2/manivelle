@@ -10,14 +10,14 @@ describe('BentoCard', () => {
 
   it('applies dark mode classes', () => {
     const { container } = render(<BentoCard title="Test Title" subtitle="Subtitle" number="01" dark />)
-    expect(container.firstChild).toHaveClass('bg-primary', 'text-white')
+    expect(container.firstChild).toHaveClass('bg-primary', 'text-surface')
     expect(container.firstChild).not.toHaveClass('bg-white')
   })
 
   it('merges custom className', () => {
     const { container } = render(<BentoCard title="Test Title" subtitle="Subtitle" number="01" className="custom-class bg-red-500" />)
     expect(container.firstChild).toHaveClass('custom-class', 'bg-red-500')
-    expect(container.firstChild).toHaveClass('p-12')
+    expect(container.firstChild).toHaveClass('p-10')
     expect(container.firstChild).not.toHaveClass('bg-white')
   })
 })
