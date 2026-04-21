@@ -7,14 +7,14 @@ describe('Button', () => {
     const button = screen.getByRole('button', { name: 'Click Me' })
     expect(button).toBeInTheDocument()
     expect(button).toHaveClass('bg-primary')
-    expect(button).toHaveClass('text-white')
+    expect(button).toHaveClass('text-surface')
   })
 
   it('renders correctly with outline variant', () => {
     render(<Button variant="outline">Click Me</Button>)
     const button = screen.getByRole('button', { name: 'Click Me' })
     expect(button).toBeInTheDocument()
-    expect(button).toHaveClass('border-primary/10')
+    expect(button).toHaveClass('border-primary/20')
   })
 
   it('merges custom className correctly', () => {
