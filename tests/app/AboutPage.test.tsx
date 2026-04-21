@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import Home from '@/app/page'
+import AboutPage from '@/app/about/page'
 
 // Mock matchMedia for Framer Motion
 beforeAll(() => {
@@ -52,9 +52,9 @@ jest.mock('framer-motion', () => {
   };
 })
 
-describe('Home Page', () => {
-  it('renders hero title', () => {
-    render(<Home />)
-    expect(screen.getByText(/Façonner l'avenir/i)).toBeInTheDocument()
+describe('About Page', () => {
+  it('renders About page title', () => {
+    render(<AboutPage />)
+    expect(screen.getByText(/Emmanuelle/i)).toBeInTheDocument()
   })
 })
