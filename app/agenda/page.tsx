@@ -1,4 +1,4 @@
-import { getEventContent, type Event } from '@/lib/content'
+import { getEventContent } from '@/lib/content'
 import AgendaView from './agenda-view'
 
 export const revalidate = 60

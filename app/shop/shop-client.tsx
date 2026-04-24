@@ -74,7 +74,7 @@ export default function ShopClient({ products = [] }: Props) {
         <div className="bg-subtle/30 p-8 md:p-12 border border-subtle/50 rounded-sm w-full max-w-lg mx-auto">
           <h2 className="text-2xl font-serif italic mb-4 text-primary">Bientôt Disponible</h2>
           <p className="text-sm text-primary/70 mb-8">
-            Inscrivez-vous pour être tenu au courant de l'ouverture de la boutique.
+            Inscrivez-vous pour être tenu au courant de l&apos;ouverture de la boutique.
           </p>
           <form className="flex flex-col gap-3" onSubmit={handleWaitlistSubmit}>
             <input 

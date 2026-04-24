@@ -1,3 +1,4 @@
+import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 import Home from '@/app/page'
 
@@ -20,21 +21,22 @@ beforeAll(() => {
 
 // Mock Framer Motion with a Proxy to handle all motion.x components
 jest.mock('framer-motion', () => {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   const React = require('react');
   const Actual = jest.requireActual('framer-motion');
   
-  const Dummy = (type: string) => ({ children, ...props }: any) => {
+  // eslint-disable-next-line react/display-name
+  const Dummy = (type: string) => ({ children, ...props }: Record<string, unknown>) => {
     // Filter out motion props
-    const { 
-      whileInView, 
-      viewport, 
-      initial, 
-      animate, 
-      variants, 
-      transition,
-      ...domProps 
-    } = props;
-    return React.createElement(type, domProps, children);
+    const domProps = { ...props };
+    delete domProps.whileInView;
+    delete domProps.viewport;
+    delete domProps.initial;
+    delete domProps.animate;
+    delete domProps.variants;
+    delete domProps.transition;
+    
+    return React.createElement(type, domProps as Record<string, unknown>, children as React.ReactNode);
   };
   
   const motionProxy = new Proxy({}, {
@@ -48,6 +50,7 @@ jest.mock('framer-motion', () => {
     useScroll: jest.fn(() => ({ scrollYProgress: { get: () => 0, onChange: () => {} } })),
     useTransform: jest.fn(() => 0),
     motion: motionProxy,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     AnimatePresence: ({ children }: any) => <>{children}</>,
   };
 })

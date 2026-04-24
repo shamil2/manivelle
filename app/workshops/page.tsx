@@ -1,4 +1,4 @@
-import { getWorkshopContent, type Workshop } from '@/lib/content'
+import { getWorkshopContent } from '@/lib/content'
 import WorkshopsView from './workshops-view'
 
 export const revalidate = 60

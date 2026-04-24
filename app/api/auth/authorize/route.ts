@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 const OAUTH_CLIENT_ID = process.env.OAUTH_CLIENT_ID!
-const OAUTH_CLIENT_SECRET = process.env.OAUTH_CLIENT_SECRET!
 const GITHUB_OAUTH_BASE_URL = 'https://github.com'
 
 export async function GET(request: NextRequest) {
