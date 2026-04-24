@@ -4,11 +4,6 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: '/admin',
-        destination: '/cms-manager/index.html',
-        permanent: false,
-      },
-      {
         source: '/cms-manager',
         destination: '/cms-manager/index.html',
         permanent: false,
