@@ -55,14 +55,17 @@ export default function GalleryPage({ gallery }: Props) {
         <div className="mb-32">
           <motion.span variants={itemUp} className="font-mono text-[10px] uppercase tracking-[0.4em] opacity-40 mb-8 flex items-center gap-4">
             <span className="w-8 h-px bg-primary/20"></span>
-            Archives / Portfolio
+            Portfolio
           </motion.span>
-          <motion.h1 variants={itemUp} className="font-serif text-[clamp(3.5rem,10vw,8rem)] text-primary italic leading-[0.85] tracking-tighter text-balance">
+          <motion.h1 variants={itemUp} className="font-serif text-[clamp(3.5rem,10vw,8rem)] text-primary italic leading-[0.85] tracking-tighter text-balance mb-8">
             Sélection <span className="text-primary/30 relative inline-block">
               Visuelle
               <span className="absolute bottom-2 left-0 w-full h-[2px] bg-accent/30 rounded-full" />
             </span>.
           </motion.h1>
+          <motion.p variants={itemUp} className="text-lg md:text-xl text-primary/60 max-w-2xl leading-relaxed">
+            Découvrez nos réalisations en carton recyclé. Chaque pièce est unique, conçue et thérapeutiquement assemblée à la main dans notre atelier normand.
+          </motion.p>
         </div>
 
         <div className="flex flex-col gap-24 md:gap-40 mb-40">
@@ -81,7 +84,7 @@ export default function GalleryPage({ gallery }: Props) {
                       <Image src={item.image || getDefaultImage(index)} alt={item.alt || item.title || "Gallery"} fill priority={index === 0} className="object-cover mix-blend-multiply opacity-80 group-hover:scale-105 transition-transform duration-[2000ms] ease-out" sizes="(max-width: 768px) 100vw, 70vw" />
                     </motion.div>
                     <motion.div variants={itemUp} viewport={{ once: true }} className="md:col-span-3 md:col-start-10">
-                      <span className="font-mono text-[10px] opacity-40 mb-4 block">Archive_{String(index + 1).padStart(2, '0')}</span>
+                      <span className="font-mono text-[10px] opacity-40 mb-4 block">Pièce_{String(index + 1).padStart(2, '0')}</span>
                       <h3 className="text-2xl font-serif italic mb-3">{item.title}</h3>
                       <p className="text-sm opacity-60 leading-relaxed font-sans">{item.description}</p>
                     </motion.div>
@@ -92,14 +95,14 @@ export default function GalleryPage({ gallery }: Props) {
                       <div className="absolute inset-0 cardboard-overlay opacity-10 pointer-events-none z-10"></div>
                       <Image src={item.image || getDefaultImage(index)} alt={item.alt || item.title || "Gallery"} fill loading="lazy" className="object-cover mix-blend-multiply opacity-80 group-hover:scale-105 transition-transform duration-[2000ms] ease-out" sizes="(max-width: 768px) 100vw, 33vw" />
                     </div>
-                    <span className="font-mono text-[10px] opacity-40 mb-2 block">Archive_{String(index + 1).padStart(2, '0')}</span>
+                    <span className="font-mono text-[10px] opacity-40 mb-2 block">Pièce_{String(index + 1).padStart(2, '0')}</span>
                     <h3 className="text-xl font-serif italic">{item.title}</h3>
                     {item.description && <p className="text-sm opacity-60 leading-relaxed font-sans mt-2">{item.description}</p>}
                   </motion.div>
                 ) : isDetail ? (
                   <>
                     <motion.div variants={itemUp} viewport={{ once: true }} className="md:col-span-3 md:col-start-2 order-2 md:order-1">
-                      <span className="font-mono text-[10px] opacity-40 mb-4 block">Archive_{String(index + 1).padStart(2, '0')}</span>
+                      <span className="font-mono text-[10px] opacity-40 mb-4 block">Pièce_{String(index + 1).padStart(2, '0')}</span>
                       <h3 className="text-2xl font-serif italic mb-3">{item.title}</h3>
                       <p className="text-sm opacity-60 leading-relaxed font-sans">{item.description}</p>
                     </motion.div>
@@ -117,7 +120,7 @@ export default function GalleryPage({ gallery }: Props) {
                           <Image src={item.image || getDefaultImage(index)} alt={item.alt || item.title || "Gallery"} fill className="object-cover mix-blend-multiply opacity-80 group-hover:scale-105 transition-transform duration-[2000ms] ease-out" sizes="(max-width: 768px) 100vw, 70vw" />
                         </motion.div>
                         <motion.div variants={itemUp} viewport={{ once: true }} className="md:col-span-3 md:col-start-10">
-                          <span className="font-mono text-[10px] opacity-40 mb-4 block">Archive_{String(index + 1).padStart(2, '0')}</span>
+                          <span className="font-mono text-[10px] opacity-40 mb-4 block">Pièce_{String(index + 1).padStart(2, '0')}</span>
                           <h3 className="text-2xl font-serif italic mb-3">{item.title}</h3>
                           <p className="text-sm opacity-60 leading-relaxed font-sans">{item.description}</p>
                         </motion.div>
@@ -129,7 +132,7 @@ export default function GalleryPage({ gallery }: Props) {
                           <Image src={item.image || getDefaultImage(index)} alt={item.alt || item.title || "Gallery"} fill className="object-cover mix-blend-multiply opacity-80 group-hover:scale-105 transition-transform duration-[2000ms] ease-out" sizes="(max-width: 768px) 100vw, 50vw" />
                         </motion.div>
                         <motion.div variants={itemUp} viewport={{ once: true }} className="md:col-span-4 order-1">
-                          <span className="font-mono text-[10px] opacity-40 mb-4 block">Archive_{String(index + 1).padStart(2, '0')}</span>
+                          <span className="font-mono text-[10px] opacity-40 mb-4 block">Pièce_{String(index + 1).padStart(2, '0')}</span>
                           <h3 className="text-2xl font-serif italic mb-3">{item.title}</h3>
                           <p className="text-sm opacity-60 leading-relaxed font-sans">{item.description}</p>
                         </motion.div>
