@@ -13,6 +13,7 @@ export type GalleryItem = {
   description?: string
   caption?: string
   alt?: string
+  location?: string
 }
 
 export type Event = {
