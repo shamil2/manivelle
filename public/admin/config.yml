@@ -63,3 +63,18 @@ collections:
       - { label: "Cover Image", name: "coverImage", widget: "image", required: false }
       - { label: "Content", name: "body", widget: "markdown" }
       - { label: "Featured", name: "featured", widget: "boolean", default: false }
+
+  - name: "pages"
+    label: "Pages"
+    folder: "content/pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Page Name", name: "pageName", widget: "string", required: false, hint: "Internal name (e.g., 'home', 'about')" }
+      - { label: "Hero Title", name: "heroTitle", widget: "string", required: false, hint: "Main headline" }
+      - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text", required: false, hint: "Secondary headline (supports multiple lines)" }
+      - { label: "Hero Description", name: "heroDescription", widget: "text", required: false, hint: "Body text in hero section" }
+      - { label: "Hero CTA Text", name: "heroCtaText", widget: "string", required: false, hint: "Button text" }
+      - { label: "Hero CTA Link", name: "heroCtaLink", widget: "string", required: false, hint: "Button link (e.g., /shop)" }
+      - { label: "Hero Image", name: "heroImage", widget: "image", required: false }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
