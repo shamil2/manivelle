@@ -4,12 +4,24 @@ import matter from 'gray-matter'
 
 const contentDirectory = path.join(process.cwd(), 'content/pages')
 const workshopsDirectory = path.join(process.cwd(), 'content/workshops')
+const eventsDirectory = path.join(process.cwd(), 'content/events')
 
 export type GalleryItem = {
   title?: string
   image?: string
   caption?: string
   location?: string
+}
+
+export type Event = {
+  title?: string
+  date?: string
+  endDate?: string
+  location?: string
+  price?: number
+  description?: string
+  image?: string
+  featured?: boolean
 }
 
 export type Workshop = {
@@ -66,6 +78,27 @@ export function getWorkshopContent(): Workshop[] {
         if (a.title === 'Semaine Intensive') return 1
         if (b.title === 'Semaine Intensive') return -1
         return 0
+      })
+  } catch {
+    return []
+  }
+}
+
+export function getEventContent(): Event[] {
+  try {
+    const files = fs.readdirSync(eventsDirectory)
+    return files
+      .filter(f => f.endsWith('.md'))
+      .map(f => {
+        const fullPath = path.join(eventsDirectory, f)
+        const fileContents = fs.readFileSync(fullPath, 'utf8')
+        const { data } = matter(fileContents)
+        return data as Event
+      })
+      .sort((a, b) => {
+        if (!a.date) return 1
+        if (!b.date) return -1
+        return new Date(a.date).getTime() - new Date(b.date).getTime()
       })
   } catch {
     return []
