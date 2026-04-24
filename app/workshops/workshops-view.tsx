@@ -82,12 +82,11 @@ export default function WorkshopsPage({ workshops }: Props) {
         <div className="flex flex-col gap-32 mb-40">
           
           {workshopTypes.map((workshop, index) => {
-            const isFeatured = index === 1
             const isLeft = index % 2 === 0
             
             return (
-              <div key={index} className={`grid grid-cols-1 lg:grid-cols-12 gap-12 items-center ${isFeatured ? 'relative' : ''}`}>
-                {isFeatured && (
+              <div key={index} className={`grid grid-cols-1 lg:grid-cols-12 gap-12 items-center ${!isLeft ? 'relative' : ''}`}>
+                {!isLeft && (
                   <div className="absolute -inset-x-6 md:-inset-x-12 inset-y-[-4rem] bg-primary/5 -z-10"></div>
                 )}
                 
@@ -115,8 +114,8 @@ export default function WorkshopsPage({ workshops }: Props) {
                 ) : (
                   <>
                     <div className="lg:col-span-6 order-2 lg:order-1 lg:pl-12">
-                      <span className="font-mono text-[10px] opacity-40 block mb-6 text-accent">FORMATION PHARE</span>
-                      <h2 className="text-5xl md:text-7xl font-serif italic mb-6">{workshop.title}</h2>
+                      <span className="font-mono text-[10px] opacity-40 block mb-6 text-accent">{index === 1 ? 'FORMATION PHARE' : 'FORMATION'}</span>
+                      <h2 className={`text-${index === 1 ? '5xl md:text-7xl' : '4xl md:text-5xl'} font-serif italic mb-6`}>{workshop.title}</h2>
                       <div className="flex gap-6 mb-8 text-[10px] uppercase tracking-[0.2em] font-bold">
                         <span className="opacity-40">{workshop.time}</span>
                         <span className="text-accent">{workshop.price}</span>
