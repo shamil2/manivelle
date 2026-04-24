@@ -15,9 +15,12 @@ export default function Navbar() {
       
       {/* Desktop Navigation */}
       <div className="hidden md:flex gap-8 uppercase text-xs tracking-widest font-medium opacity-60">
-        <Link href="/shop" className="hover:opacity-100 transition-opacity hover:text-accent">The Shop</Link>
-        <Link href="/commissions" className="hover:opacity-100 transition-opacity hover:text-accent">Commissions</Link>
-        <Link href="/workshops" className="hover:opacity-100 transition-opacity hover:text-accent">Workshops</Link>
+        <Link href="/shop" className="hover:opacity-100 transition-opacity hover:text-accent">Boutique</Link>
+        <Link href="/commissions" className="hover:opacity-100 transition-opacity hover:text-accent">Sur Mesure</Link>
+        <Link href="/workshops" className="hover:opacity-100 transition-opacity hover:text-accent">Stages</Link>
+        <Link href="/about" className="hover:opacity-100 transition-opacity hover:text-accent">À Propos</Link>
+        <Link href="/agenda" className="hover:opacity-100 transition-opacity hover:text-accent">Agenda</Link>
+        <Link href="/gallery" className="hover:opacity-100 transition-opacity hover:text-accent">Galerie</Link>
       </div>
 
       <div className="flex gap-4 items-center">
@@ -41,27 +44,12 @@ export default function Navbar() {
         "fixed inset-0 bg-surface z-40 flex flex-col items-center justify-center gap-12 transition-transform duration-500 md:hidden",
         isOpen ? "translate-y-0" : "-translate-y-full"
       )}>
-        <Link 
-          href="/shop" 
-          onClick={() => setIsOpen(false)}
-          className="text-2xl uppercase tracking-[0.2em] font-medium hover:text-accent transition-colors"
-        >
-          The Shop
-        </Link>
-        <Link 
-          href="/commissions" 
-          onClick={() => setIsOpen(false)}
-          className="text-2xl uppercase tracking-[0.2em] font-medium hover:text-accent transition-colors"
-        >
-          Commissions
-        </Link>
-        <Link 
-          href="/workshops" 
-          onClick={() => setIsOpen(false)}
-          className="text-2xl uppercase tracking-[0.2em] font-medium hover:text-accent transition-colors"
-        >
-          Workshops
-        </Link>
+        <Link href="/shop" onClick={() => setIsOpen(false)} className="text-2xl uppercase tracking-[0.2em] font-medium hover:text-accent transition-colors">Boutique</Link>
+        <Link href="/commissions" onClick={() => setIsOpen(false)} className="text-2xl uppercase tracking-[0.2em] font-medium hover:text-accent transition-colors">Sur Mesure</Link>
+        <Link href="/workshops" onClick={() => setIsOpen(false)} className="text-2xl uppercase tracking-[0.2em] font-medium hover:text-accent transition-colors">Stages</Link>
+        <Link href="/about" onClick={() => setIsOpen(false)} className="text-2xl uppercase tracking-[0.2em] font-medium hover:text-accent transition-colors">À Propos</Link>
+        <Link href="/agenda" onClick={() => setIsOpen(false)} className="text-2xl uppercase tracking-[0.2em] font-medium hover:text-accent transition-colors">Agenda</Link>
+        <Link href="/gallery" onClick={() => setIsOpen(false)} className="text-2xl uppercase tracking-[0.2em] font-medium hover:text-accent transition-colors">Galerie</Link>
       </div>
     </nav>
   )
