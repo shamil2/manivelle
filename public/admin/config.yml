@@ -34,8 +34,9 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string", required: false }
+      - { label: "Title", name: "title", widget: "string" }
       - { label: "Image", name: "image", widget: "image" }
+      - { label: "Description", name: "description", widget: "text", required: false }
       - { label: "Caption", name: "caption", widget: "string", required: false }
       - { label: "Alt Text", name: "alt", widget: "string", required: false }
 
