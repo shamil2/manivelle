@@ -20,7 +20,7 @@ export default function GalleryPage({ gallery }: Props) {
   const galleryItems = (gallery && gallery.length > 0) ? gallery : defaultGallery
 
   const transition = { duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] };
-  
+
   const staggerContainer = {
     hidden: { opacity: 0 },
     visible: {
@@ -45,8 +45,8 @@ export default function GalleryPage({ gallery }: Props) {
   return (
     <div className="flex-1 flex flex-col pt-32 pb-24 relative overflow-hidden bg-surface">
       <div className="absolute inset-0 cardboard-overlay opacity-[0.02] pointer-events-none"></div>
-      
-      <motion.div 
+
+      <motion.div
         className="max-w-[1440px] mx-auto px-6 md:px-12 w-full"
         variants={staggerContainer}
         initial="hidden"
@@ -71,7 +71,7 @@ export default function GalleryPage({ gallery }: Props) {
             const isSmallRow = index === 1 || index === 2
             const isTextRight = index % 2 === 0
             const isDetail = index === 3
-            
+
             return (
               <div key={index} className={`grid grid-cols-1 md:grid-cols-12 gap-8 items-center ${isSmallRow ? 'items-start' : ''}`}>
                 {isLarge ? (
@@ -94,6 +94,7 @@ export default function GalleryPage({ gallery }: Props) {
                     </div>
                     <span className="font-mono text-[10px] opacity-40 mb-2 block">Archive_{String(index + 1).padStart(2, '0')}</span>
                     <h3 className="text-xl font-serif italic">{item.title}</h3>
+                    {item.description && <p className="text-sm opacity-60 leading-relaxed font-sans mt-2">{item.description}</p>}
                   </motion.div>
                 ) : isDetail ? (
                   <>
@@ -140,7 +141,7 @@ export default function GalleryPage({ gallery }: Props) {
             )
           })}
         </div>
-         
+
         <motion.div variants={itemUp} viewport={{ once: true }} initial="hidden" whileInView="visible" className="py-32 border-y border-primary/10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center mb-32 relative">
           <div className="absolute inset-0 bg-primary/5 -z-10"></div>
           <div className="lg:col-span-4 lg:col-start-2">
@@ -150,7 +151,7 @@ export default function GalleryPage({ gallery }: Props) {
           </div>
           <div className="lg:col-span-6 relative aspect-video bg-subtle/20 rough-border overflow-hidden shadow-xl">
             <div className="absolute inset-0 cardboard-overlay opacity-10 pointer-events-none z-10"></div>
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/jZ_y12_9KFE?si=uK3_g2JzZ1Wz28gQ" title="La Manivelle Workshop" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen className="relative z-0"></iframe>
+            <iframe width="100%" height="100%" src="https://www.youtube.com/watch?v=LID3JUDXRPo" title="La Manivelle Workshop" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen className="relative z-0"></iframe>
           </div>
         </motion.div>
 
