@@ -3,10 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Content Manager</title>
+  <title>La Manivelle | Gestion</title>
+  <link rel="icon" href="/favicon.svg" />
   <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/decap-cms@3.12.2/dist/decap-cms.css" />
+  <style>
+    /* Hide default decap logo text if it appears and customize login button text using CSS */
+    [class*="AppHeaderSiteLink"] { display: none !important; }
+    .nc-githubAuthenticationPage-button { background-color: #2C2418 !important; border-radius: 4px !important; }
+  </style>
 </head>
 <body>
   <div id="decap-cms"></div>

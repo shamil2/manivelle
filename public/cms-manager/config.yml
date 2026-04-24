@@ -3,6 +3,8 @@ backend:
   repo: shamil2/manivelle
   branch: main
 
+logo_url: "/assets/images/logo-transparent.png"
+
 media_folder: public/images/uploads
 public_folder: /images/uploads
 
