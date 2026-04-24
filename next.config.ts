@@ -5,7 +5,12 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/admin',
-        destination: '/admin/index.html',
+        destination: '/cms-manager/index.html',
+        permanent: false,
+      },
+      {
+        source: '/cms-manager',
+        destination: '/cms-manager/index.html',
         permanent: false,
       },
     ];
