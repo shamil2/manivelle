@@ -12,6 +12,13 @@
     /* Hide default decap logo text if it appears and customize login button text using CSS */
     [class*="AppHeaderSiteLink"] { display: none !important; }
     .nc-githubAuthenticationPage-button { background-color: #2C2418 !important; border-radius: 4px !important; }
+    
+    /* Completely hide the Decap CMS logo at the bottom of the login page */
+    a[href*="decapcms.org"] { display: none !important; }
+    a[href*="netlifycms.org"] { display: none !important; }
+    [class*="nc-githubAuthenticationPage-logo"] { display: none !important; }
+    [class*="Logo-module"] { display: none !important; }
+    svg[class*="Icon"] { display: none !important; } /* If the logo is a raw SVG icon at the bottom */
   </style>
 </head>
 <body>
