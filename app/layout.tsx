@@ -10,6 +10,9 @@ const instrument = Instrument_Serif({ weight: "400", subsets: ["latin"], variabl
 export const metadata: Metadata = {
   title: "La Manivelle | Meubles Sur Mesure",
   description: "Artisanal cardboard furniture and workshops in Cliponville, France.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
