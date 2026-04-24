@@ -72,7 +72,7 @@ export default function WorkshopsPage({ workshops }: Props) {
           {/* Item 01 - Standard Left */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
              <div className="lg:col-span-5 relative aspect-[4/5] bg-surface/5 rough-border group overflow-hidden">
-                <Image src="/assets/images/workshop-01.png" alt="Session Découverte" fill className="object-cover group-hover:scale-105 transition-transform duration-[2000ms] ease-out brightness-90 group-hover:brightness-100" />
+                <Image src={workshopTypes[0].image || "/assets/images/workshop-01.png"} alt={workshopTypes[0].title || "Workshop"} fill className="object-cover group-hover:scale-105 transition-transform duration-[2000ms] ease-out brightness-90 group-hover:brightness-100" />
                 <div className="absolute inset-0 cardboard-overlay opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity duration-700 mix-blend-multiply"></div>
              </div>
              <div className="lg:col-span-6 lg:col-start-7">
@@ -110,7 +110,7 @@ export default function WorkshopsPage({ workshops }: Props) {
                 </div>
              </div>
              <div className="lg:col-span-6 order-1 lg:order-2 relative aspect-square bg-primary text-surface rough-border group overflow-hidden">
-                <Image src="/assets/images/workshop-02.png" alt="Masterclass Mobilier" fill className="object-cover group-hover:scale-105 transition-transform duration-[2000ms] ease-out opacity-90 group-hover:opacity-100" />
+                <Image src={workshopTypes[1].image || "/assets/images/workshop-02.png"} alt={workshopTypes[1].title || "Workshop"} fill className="object-cover group-hover:scale-105 transition-transform duration-[2000ms] ease-out opacity-90 group-hover:opacity-100" />
                 <div className="absolute inset-0 cardboard-overlay opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity duration-700 mix-blend-screen"></div>
              </div>
           </div>
@@ -118,7 +118,7 @@ export default function WorkshopsPage({ workshops }: Props) {
           {/* Item 03 - Standard Left */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
              <div className="lg:col-span-4 lg:col-start-2 relative aspect-[3/4] bg-surface/5 rough-border group overflow-hidden">
-                <Image src="/assets/images/workshop-03.png" alt="Semaine Intensive" fill className="object-cover group-hover:scale-105 transition-transform duration-[2000ms] ease-out brightness-90 group-hover:brightness-100" />
+                <Image src={workshopTypes[2].image || "/assets/images/workshop-03.png"} alt={workshopTypes[2].title || "Workshop"} fill className="object-cover group-hover:scale-105 transition-transform duration-[2000ms] ease-out brightness-90 group-hover:brightness-100" />
                 <div className="absolute inset-0 cardboard-overlay opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity duration-700 mix-blend-multiply"></div>
              </div>
              <div className="lg:col-span-6 lg:col-start-7">

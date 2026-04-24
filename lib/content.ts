@@ -17,6 +17,7 @@ export type Workshop = {
   time?: string
   price?: string
   description?: string
+  image?: string
   features?: string[]
   featured?: boolean
 }
