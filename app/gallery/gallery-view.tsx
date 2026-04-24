@@ -151,7 +151,16 @@ export default function GalleryPage({ gallery }: Props) {
           </div>
           <div className="lg:col-span-6 relative aspect-video bg-subtle/20 rough-border overflow-hidden shadow-xl">
             <div className="absolute inset-0 cardboard-overlay opacity-10 pointer-events-none z-10"></div>
-            <iframe width="100%" height="100%" src="https://www.youtube.com/watch?v=LID3JUDXRPo" title="La Manivelle Workshop" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen className="relative z-0"></iframe>
+            <iframe 
+              width="100%" 
+              height="100%" 
+              src="https://www.youtube.com/embed/jZ_y12_9KFE" 
+              title="La Manivelle - Le processus de création" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowFullScreen 
+              className="relative z-0"
+            ></iframe>
           </div>
         </motion.div>
 
