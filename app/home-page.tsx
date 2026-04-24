@@ -19,8 +19,8 @@ const defaultContent: PageContent = {
   heroCtaText: "La Boutique",
   heroCtaLink: "/shop",
   galleryItems: [
-    { title: "Bibliothèque Architecturale", image: "/assets/images/gallery-1.jpg", caption: "Custom commission detail", location: "Paris, France" },
-    { title: "Table de Réunion Organique", image: "/assets/images/gallery-2.jpg", caption: "Custom commission detail", location: "Studio Creatif" },
+    { title: "Bibliothèque Architecturale", image: "/assets/images/gallery-1.svg", caption: "Custom commission detail", location: "Paris, France" },
+    { title: "Table de Réunion Organique", image: "/assets/images/gallery-2.svg", caption: "Custom commission detail", location: "Studio Creatif" },
   ],
 }
 
@@ -187,7 +187,7 @@ export default function HomeClient({ content }: Props) {
               <div key={index} className="w-[80vw] max-w-[900px] flex-shrink-0 flex flex-col justify-center">
                 <div className="relative aspect-[16/9] overflow-hidden group rough-border bg-white mb-8">
                   <Image 
-                    src={item.image || "/assets/images/gallery-1.jpg"} 
+                    src={item.image || "/assets/images/gallery-1.svg"} 
                     alt={item.caption || item.title || "Gallery item"} 
                     fill 
                     loading="lazy"
@@ -227,7 +227,7 @@ export default function HomeClient({ content }: Props) {
           <motion.div variants={itemUp} className="md:col-span-5 relative z-10">
             <div className="relative aspect-[3/4] rough-border overflow-hidden bg-subtle/10 group mb-12 translate-x-4 md:translate-x-12">
                <Image 
-                  src="/assets/images/finished-detail.jpg" 
+                  src="/assets/images/gallery-3.svg" 
                   alt="Finished Cardboard Detail" 
                   fill 
                   loading="lazy"

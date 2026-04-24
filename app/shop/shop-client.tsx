@@ -122,7 +122,7 @@ export default function ShopClient({ products = [] }: Props) {
           >
             <div className="relative aspect-[3/4] rough-border overflow-hidden bg-subtle/10 mb-6">
               <Image
-                src={product.images?.[0] || '/assets/images/gallery-2.jpg'}
+                src={product.images?.[0] || '/assets/images/gallery-2.svg'}
                 alt={product.name || "Product"}
                 fill
                 className="object-cover mix-blend-multiply opacity-80 group-hover:scale-105 transition-transform duration-[2000ms] ease-out"

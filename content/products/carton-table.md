@@ -5,5 +5,5 @@ price: 89
 checkoutUrl: "#"
 inStock: true
 images:
-  - /assets/images/gallery-2.jpg
+  - /assets/images/gallery-2.svg
 ---

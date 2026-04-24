@@ -11,10 +11,10 @@ type Props = {
 }
 
 const defaultGallery: GalleryItem[] = [
-  { title: 'Bibliothèque Architecturale', image: '/assets/images/gallery-1.jpg', description: 'Réalisation sur mesure pour un appartement haussmannien. Structure en carton double cannelure, finitions kraft brut.', alt: 'Bibliothèque sur mesure' },
-  { title: 'Table de Réunion Organique', image: '/assets/images/gallery-2.jpg', description: 'Table de réunion pour espace de coworking. Design organique inspiré des formes naturelles.', alt: 'Table de réunion' },
-  { title: 'Fauteuil Asymétrique', image: '/assets/images/gallery-3.jpg', description: 'Fauteuil lounge confortable avec accoudoirs asymétriques. Conçu pour le confort quotidien.', alt: 'Fauteuil en carton' },
-  { title: 'La Texture', image: '/assets/images/finished-detail.jpg', description: 'Détail des tranches de carton superposées et poncées à la main. Le matériau brut devient noble.', alt: 'Texture du carton' },
+  { title: 'Bibliothèque Architecturale', image: '/assets/images/gallery-1.svg', description: 'Réalisation sur mesure pour un appartement haussmannien. Structure en carton double cannelure, finitions kraft brut.', alt: 'Bibliothèque sur mesure' },
+  { title: 'Table de Réunion Organique', image: '/assets/images/gallery-2.svg', description: 'Table de réunion pour espace de coworking. Design organique inspiré des formes naturelles.', alt: 'Table de réunion' },
+  { title: 'Fauteuil Asymétrique', image: '/assets/images/gallery-3.svg', description: 'Fauteuil lounge confortable avec accoudoirs asymétriques. Conçu pour le confort quotidien.', alt: 'Fauteuil en carton' },
+  { title: 'La Texture', image: '/assets/images/gallery-3.svg', description: 'Détail des tranches de carton superposées et poncées à la main. Le matériau brut devient noble.', alt: 'Texture du carton' },
 ]
 
 const ITEMS_PER_PAGE = 9
@@ -53,7 +53,7 @@ export default function GalleryPage({ gallery }: Props) {
   }
 
   const getDefaultImage = (index: number) => {
-    const images = ['/assets/images/gallery-1.jpg', '/assets/images/gallery-2.jpg', '/assets/images/gallery-3.jpg', '/assets/images/finished-detail.jpg']
+    const images = ['/assets/images/gallery-1.svg', '/assets/images/gallery-2.svg', '/assets/images/gallery-3.svg', '/assets/images/gallery-3.svg']
     return images[index % images.length]
   }
 
