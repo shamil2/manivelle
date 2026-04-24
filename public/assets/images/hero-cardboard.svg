@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
-  <rect width="800" height="600" fill="#E8E0D5"/>
-  <rect x="100" y="50" width="600" height="500" fill="#D4C9B8" rx="8"/>
-  <text x="400" y="320" font-family="serif" font-size="64" fill="#8B7355" text-anchor="middle">La Manivelle</text>
-  <text x="400" y="380" font-family="serif" font-size="24" fill="#8B7355" text-anchor="middle">Artisan</text>
-</svg>
