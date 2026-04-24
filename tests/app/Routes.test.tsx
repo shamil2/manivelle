@@ -23,7 +23,7 @@ beforeAll(() => {
 describe('Basic Routes', () => {
   it('renders Shop page', () => {
     render(<ShopPage />)
-    expect(screen.getByText(/La Boutique est actuellement/i)).toBeInTheDocument()
+    expect(screen.getByText(/Collection/i)).toBeInTheDocument()
   })
   it('renders Workshops page', () => {
     render(<WorkshopsPage />)

@@ -8,7 +8,6 @@ const GITHUB_OAUTH_BASE_URL = 'https://github.com'
 export async function GET(request: NextRequest) {
   const url = new URL(request.url)
   const code = url.searchParams.get('code')
-  const state = url.searchParams.get('state')
   const originalUrl = url.searchParams.get('redirect_url') || '/admin/'
 
   if (!code) {

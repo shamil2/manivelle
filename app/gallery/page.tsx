@@ -1,4 +1,4 @@
-import { getGalleryContent, type GalleryItem } from '@/lib/content'
+import { getGalleryContent } from '@/lib/content'
 import GalleryView from './gallery-view'
 
 export const revalidate = 60
