@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { cn } from '@/lib/utils'
 
 interface BentoCardProps {
@@ -8,10 +9,11 @@ interface BentoCardProps {
   description?: string
   dark?: boolean
   className?: string
+  href?: string
 }
 
-export default function BentoCard({ title, subtitle, number, description, dark = false, className = '' }: BentoCardProps) {
-  return (
+export default function BentoCard({ title, subtitle, number, description, dark = false, className = '', href }: BentoCardProps) {
+  const content = (
     <div className={cn("p-12 flex flex-col justify-between group relative overflow-hidden transition-all duration-500 border border-primary/5 hover:-translate-y-1 hover:shadow-2xl hover:border-accent", dark ? "bg-primary text-white" : "bg-white", className)}>
       {/* Texture overlay using the custom variable we defined in Task 2 */}
       <div className="absolute inset-0 bg-cardboard-texture opacity-5 pointer-events-none"></div>
@@ -26,4 +28,9 @@ export default function BentoCard({ title, subtitle, number, description, dark =
       </div>
     </div>
   )
+
+  if (href) {
+    return <Link href={href}>{content}</Link>
+  }
+  return content
 }

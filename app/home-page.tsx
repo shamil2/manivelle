@@ -255,7 +255,7 @@ export default function HomeClient({ content }: Props) {
               </p>
             </div>
             <div className="mt-16">
-              <Button variant="text">Découvrir notre démarche</Button>
+              <Button variant="text" href="/about">Découvrir notre démarche</Button>
             </div>
           </motion.div>
         </motion.div>
