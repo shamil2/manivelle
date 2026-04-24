@@ -82,23 +82,23 @@ export default function WorkshopsPage({ workshops }: Props) {
         <div className="flex flex-col gap-32 mb-40">
           
           {workshopTypes.map((workshop, index) => {
-            const isMasterclass = index === 1
-            const layout = index % 3
+            const isFeatured = index === 1
+            const isLeft = index % 2 === 0
             
             return (
-              <div key={index} className={`grid grid-cols-1 lg:grid-cols-12 gap-12 items-center ${isMasterclass ? 'relative' : ''}`}>
-                {isMasterclass && (
+              <div key={index} className={`grid grid-cols-1 lg:grid-cols-12 gap-12 items-center ${isFeatured ? 'relative' : ''}`}>
+                {isFeatured && (
                   <div className="absolute -inset-x-6 md:-inset-x-12 inset-y-[-4rem] bg-primary/5 -z-10"></div>
                 )}
                 
-                {layout === 0 || layout === 2 ? (
+                {isLeft ? (
                   <>
-                    <div className={`lg:col-span-${layout === 0 ? 5 : 4} relative aspect-[4/5] bg-surface/5 rough-border group overflow-hidden`}>
+                    <div className={`lg:col-span-5 relative aspect-[4/5] bg-surface/5 rough-border group overflow-hidden`}>
                       <Image src={workshop.image || getImage(index)} alt={workshop.title || "Workshop"} fill className="object-cover group-hover:scale-105 transition-transform duration-[2000ms] ease-out brightness-90 group-hover:brightness-100" />
                       <div className="absolute inset-0 cardboard-overlay opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity duration-700 mix-blend-multiply"></div>
                     </div>
-                    <div className={`lg:col-span-6 lg:col-start-${layout === 0 ? 7 : 7}`}>
-                      <span className="font-mono text-[10px] opacity-40 block mb-6">{index === 0 ? 'INITIATION' : index === 2 ? 'IMMERSION' : 'WORKSHOP'}</span>
+                    <div className="lg:col-span-6 lg:col-start-7">
+                      <span className="font-mono text-[10px] opacity-40 block mb-6">{index === 0 ? 'INITIATION' : index === 2 ? 'IMMERSION' : index === 1 ? 'FORMATION PHARE' : 'FORMATION'}</span>
                       <h2 className="text-4xl md:text-5xl font-serif italic mb-6">{workshop.title}</h2>
                       <div className="flex gap-6 mb-8 text-[10px] uppercase tracking-[0.2em] font-bold">
                         <span className="opacity-40">{workshop.time}</span>
