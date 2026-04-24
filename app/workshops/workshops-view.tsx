@@ -15,6 +15,7 @@ const defaultWorkshops: Workshop[] = [
     time: '3 Heures', 
     price: '€45',
     description: 'Une introduction tactile à l\'artisanat du carton. Apprenez les bases de la découpe et de l\'assemblage en créant un objet décoratif.',
+    image: '/assets/images/workshop-01.png',
     features: ['Bases du matériau', 'Coupe de précision', 'Création à emporter']
   },
   { 
@@ -22,6 +23,7 @@ const defaultWorkshops: Workshop[] = [
     time: '20 Sessions', 
     price: '€450',
     description: 'Notre formation phare. Concevez et construisez un meuble structurel grandeur nature, guidé pas à pas par un maître artisan.',
+    image: '/assets/images/workshop-02.png',
     features: ['Ingénierie structurelle', 'Design sur mesure', 'Accès à l\'atelier']
   },
   { 
@@ -29,6 +31,7 @@ const defaultWorkshops: Workshop[] = [
     time: '5 Jours', 
     price: '€180',
     description: 'Plongez dans le métier. Une expérience immersive conçue pour vous donner les bases solides de la conception de mobilier.',
+    image: '/assets/images/workshop-03.png',
     features: ['Apprentissage accéléré', 'Focus sur le projet', 'Développement technique']
   }
 ];
@@ -39,6 +42,15 @@ export default function WorkshopsPage({ workshops }: Props) {
   const scrollToBooking = () => {
     document.getElementById('booking-section')?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  const getImage = (index: number) => {
+    const images = [
+      '/assets/images/workshop-01.png',
+      '/assets/images/workshop-02.png', 
+      '/assets/images/workshop-03.png'
+    ]
+    return images[index % images.length]
+  }
 
   return (
     <div className="flex-1 flex flex-col pt-32 pb-24 relative overflow-hidden">
@@ -69,73 +81,62 @@ export default function WorkshopsPage({ workshops }: Props) {
         {/* Asymmetrical Workshop Offerings */}
         <div className="flex flex-col gap-32 mb-40">
           
-          {/* Item 01 - Standard Left */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-             <div className="lg:col-span-5 relative aspect-[4/5] bg-surface/5 rough-border group overflow-hidden">
-                <Image src={workshopTypes[0].image || "/assets/images/workshop-01.png"} alt={workshopTypes[0].title || "Workshop"} fill className="object-cover group-hover:scale-105 transition-transform duration-[2000ms] ease-out brightness-90 group-hover:brightness-100" />
-                <div className="absolute inset-0 cardboard-overlay opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity duration-700 mix-blend-multiply"></div>
-             </div>
-             <div className="lg:col-span-6 lg:col-start-7">
-                <span className="font-mono text-[10px] opacity-40 block mb-6">INITIATION</span>
-                <h2 className="text-4xl md:text-5xl font-serif italic mb-6">{workshopTypes[0].title}</h2>
-                <div className="flex gap-6 mb-8 text-[10px] uppercase tracking-[0.2em] font-bold">
-                  <span className="opacity-40">{workshopTypes[0].time}</span>
-                  <span className="text-accent">{workshopTypes[0].price}</span>
-                </div>
-                <p className="text-lg opacity-70 leading-relaxed max-w-md mb-12">
-                  {workshopTypes[0].description}
-                </p>
-                <div onClick={scrollToBooking}>
-                  <Button variant="outline">Demander une date</Button>
-                </div>
-             </div>
-          </div>
-
-          {/* Item 02 - Featured Right (Masterclass) */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative">
-             <div className="absolute -inset-x-6 md:-inset-x-12 inset-y-[-4rem] bg-primary/5 -z-10"></div>
-             
-             <div className="lg:col-span-6 order-2 lg:order-1 lg:pl-12">
-                <span className="font-mono text-[10px] opacity-40 block mb-6 text-accent">FORMATION PHARE</span>
-                <h2 className="text-5xl md:text-7xl font-serif italic mb-6">{workshopTypes[1].title}</h2>
-                <div className="flex gap-6 mb-8 text-[10px] uppercase tracking-[0.2em] font-bold">
-                  <span className="opacity-40">{workshopTypes[1].time}</span>
-                  <span className="text-accent">{workshopTypes[1].price}</span>
-                </div>
-                <p className="text-xl opacity-80 leading-relaxed max-w-md mb-12">
-                  {workshopTypes[1].description}
-                </p>
-                <div onClick={scrollToBooking}>
-                  <Button variant="primary">Réserver cette formation</Button>
-                </div>
-             </div>
-             <div className="lg:col-span-6 order-1 lg:order-2 relative aspect-square bg-primary text-surface rough-border group overflow-hidden">
-                <Image src={workshopTypes[1].image || "/assets/images/workshop-02.png"} alt={workshopTypes[1].title || "Workshop"} fill className="object-cover group-hover:scale-105 transition-transform duration-[2000ms] ease-out opacity-90 group-hover:opacity-100" />
-                <div className="absolute inset-0 cardboard-overlay opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity duration-700 mix-blend-screen"></div>
-             </div>
-          </div>
-
-          {/* Item 03 - Standard Left */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-             <div className="lg:col-span-4 lg:col-start-2 relative aspect-[3/4] bg-surface/5 rough-border group overflow-hidden">
-                <Image src={workshopTypes[2].image || "/assets/images/workshop-03.png"} alt={workshopTypes[2].title || "Workshop"} fill className="object-cover group-hover:scale-105 transition-transform duration-[2000ms] ease-out brightness-90 group-hover:brightness-100" />
-                <div className="absolute inset-0 cardboard-overlay opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity duration-700 mix-blend-multiply"></div>
-             </div>
-             <div className="lg:col-span-6 lg:col-start-7">
-                <span className="font-mono text-[10px] opacity-40 block mb-6">IMMERSION</span>
-                <h2 className="text-4xl md:text-5xl font-serif italic mb-6">{workshopTypes[2].title}</h2>
-                <div className="flex gap-6 mb-8 text-[10px] uppercase tracking-[0.2em] font-bold">
-                  <span className="opacity-40">{workshopTypes[2].time}</span>
-                  <span className="text-accent">{workshopTypes[2].price}</span>
-                </div>
-                <p className="text-lg opacity-70 leading-relaxed max-w-md mb-12">
-                  {workshopTypes[2].description}
-                </p>
-                <div onClick={scrollToBooking}>
-                  <Button variant="outline">Demander une date</Button>
-                </div>
-             </div>
-          </div>
+          {workshopTypes.map((workshop, index) => {
+            const isMasterclass = index === 1
+            const layout = index % 3
+            
+            return (
+              <div key={index} className={`grid grid-cols-1 lg:grid-cols-12 gap-12 items-center ${isMasterclass ? 'relative' : ''}`}>
+                {isMasterclass && (
+                  <div className="absolute -inset-x-6 md:-inset-x-12 inset-y-[-4rem] bg-primary/5 -z-10"></div>
+                )}
+                
+                {layout === 0 || layout === 2 ? (
+                  <>
+                    <div className={`lg:col-span-${layout === 0 ? 5 : 4} relative aspect-[4/5] bg-surface/5 rough-border group overflow-hidden`}>
+                      <Image src={workshop.image || getImage(index)} alt={workshop.title || "Workshop"} fill className="object-cover group-hover:scale-105 transition-transform duration-[2000ms] ease-out brightness-90 group-hover:brightness-100" />
+                      <div className="absolute inset-0 cardboard-overlay opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity duration-700 mix-blend-multiply"></div>
+                    </div>
+                    <div className={`lg:col-span-6 lg:col-start-${layout === 0 ? 7 : 7}`}>
+                      <span className="font-mono text-[10px] opacity-40 block mb-6">{index === 0 ? 'INITIATION' : index === 2 ? 'IMMERSION' : 'WORKSHOP'}</span>
+                      <h2 className="text-4xl md:text-5xl font-serif italic mb-6">{workshop.title}</h2>
+                      <div className="flex gap-6 mb-8 text-[10px] uppercase tracking-[0.2em] font-bold">
+                        <span className="opacity-40">{workshop.time}</span>
+                        <span className="text-accent">{workshop.price}</span>
+                      </div>
+                      <p className="text-lg opacity-70 leading-relaxed max-w-md mb-12">
+                        {workshop.description}
+                      </p>
+                      <div onClick={scrollToBooking}>
+                        <Button variant="outline">Demander une date</Button>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="lg:col-span-6 order-2 lg:order-1 lg:pl-12">
+                      <span className="font-mono text-[10px] opacity-40 block mb-6 text-accent">FORMATION PHARE</span>
+                      <h2 className="text-5xl md:text-7xl font-serif italic mb-6">{workshop.title}</h2>
+                      <div className="flex gap-6 mb-8 text-[10px] uppercase tracking-[0.2em] font-bold">
+                        <span className="opacity-40">{workshop.time}</span>
+                        <span className="text-accent">{workshop.price}</span>
+                      </div>
+                      <p className="text-xl opacity-80 leading-relaxed max-w-md mb-12">
+                        {workshop.description}
+                      </p>
+                      <div onClick={scrollToBooking}>
+                        <Button variant="primary">Réserver cette formation</Button>
+                      </div>
+                    </div>
+                    <div className="lg:col-span-6 order-1 lg:order-2 relative aspect-square bg-primary text-surface rough-border group overflow-hidden">
+                      <Image src={workshop.image || getImage(index)} alt={workshop.title || "Workshop"} fill className="object-cover group-hover:scale-105 transition-transform duration-[2000ms] ease-out opacity-90 group-hover:opacity-100" />
+                      <div className="absolute inset-0 cardboard-overlay opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity duration-700 mix-blend-screen"></div>
+                    </div>
+                  </>
+                )}
+              </div>
+            )
+          })}
 
         </div>
 
