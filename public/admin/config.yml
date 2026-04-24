@@ -77,4 +77,12 @@ collections:
       - { label: "Hero CTA Text", name: "heroCtaText", widget: "string", required: false, hint: "Button text" }
       - { label: "Hero CTA Link", name: "heroCtaLink", widget: "string", required: false, hint: "Button link (e.g., /shop)" }
       - { label: "Hero Image", name: "heroImage", widget: "image", required: false }
+      - label: "Gallery Items"
+        name: "galleryItems"
+        widget: "list"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Caption", name: "caption", widget: "string", required: false }
+          - { label: "Location", name: "location", widget: "string", required: false }
       - { label: "Featured", name: "featured", widget: "boolean", default: false }

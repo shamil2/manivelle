@@ -4,6 +4,13 @@ import matter from 'gray-matter'
 
 const contentDirectory = path.join(process.cwd(), 'content/pages')
 
+export type GalleryItem = {
+  title?: string
+  image?: string
+  caption?: string
+  location?: string
+}
+
 export type PageContent = {
   pageName?: string
   heroTitle?: string
@@ -12,6 +19,7 @@ export type PageContent = {
   heroCtaText?: string
   heroCtaLink?: string
   heroImage?: string
+  galleryItems?: GalleryItem[]
   featured?: boolean
 }
 

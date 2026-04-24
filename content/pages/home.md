@@ -6,4 +6,13 @@ heroDescription: "La Manivelle est un atelier artisanal concevant des meubles su
 heroCtaText: "La Boutique"
 heroCtaLink: "/shop"
 heroImage: /assets/images/hero-cardboard.png
+galleryItems:
+  - title: "Bibliothèque Architecturale"
+    image: /assets/images/gallery-1.jpg
+    caption: "Custom commission detail"
+    location: "Paris, France"
+  - title: "Table de Réunion Organique"
+    image: /assets/images/gallery-2.jpg
+    caption: "Custom commission detail"
+    location: "Studio Creatif"
 featured: true

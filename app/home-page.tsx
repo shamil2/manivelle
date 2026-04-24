@@ -18,6 +18,10 @@ const defaultContent: PageContent = {
   heroDescription: "La Manivelle est un atelier artisanal concevant des meubles sur mesure et éco-responsables en carton recyclé. Savoir-faire artisanal, ingénierie précise.",
   heroCtaText: "La Boutique",
   heroCtaLink: "/shop",
+  galleryItems: [
+    { title: "Bibliothèque Architecturale", image: "/assets/images/gallery-1.jpg", caption: "Custom commission detail", location: "Paris, France" },
+    { title: "Table de Réunion Organique", image: "/assets/images/gallery-2.jpg", caption: "Custom commission detail", location: "Studio Creatif" },
+  ],
 }
 
 export default function HomeClient({ content }: Props) {
@@ -51,6 +55,7 @@ export default function HomeClient({ content }: Props) {
 
   const heroTitleWords = pageContent.heroTitle?.split(' ') || defaultContent.heroTitle!.split(' ')
   const subtitleWord = pageContent.heroSubtitle || defaultContent.heroSubtitle!
+  const galleryItems = pageContent.galleryItems || defaultContent.galleryItems!
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -177,47 +182,28 @@ export default function HomeClient({ content }: Props) {
               </p>
             </div>
 
-            {/* Gallery Item 1 */}
-            <div className="w-[80vw] max-w-[900px] flex-shrink-0 flex flex-col justify-center">
-              <div className="relative aspect-[16/9] overflow-hidden group rough-border bg-white mb-8">
-                <Image 
-                  src="/assets/images/gallery-1.jpg" 
-                  alt="Custom commission detail" 
-                  fill 
-                  loading="lazy"
-                  sizes="(max-width: 768px) 80vw, 900px"
-                  className="object-cover group-hover:scale-105 transition-transform duration-[2000ms] ease-out opacity-90"
-                />
-              </div>
-              <div className="flex justify-between items-start">
-                <div>
-                  <h3 className="text-2xl font-serif italic">Bibliothèque Architecturale</h3>
-                  <p className="text-sm opacity-60 mt-2 font-mono uppercase tracking-widest">Paris, France</p>
+            {/* Gallery Slides from CMS */}
+            {galleryItems.map((item, index) => (
+              <div key={index} className="w-[80vw] max-w-[900px] flex-shrink-0 flex flex-col justify-center">
+                <div className="relative aspect-[16/9] overflow-hidden group rough-border bg-white mb-8">
+                  <Image 
+                    src={item.image || "/assets/images/gallery-1.jpg"} 
+                    alt={item.caption || item.title || "Gallery item"} 
+                    fill 
+                    loading="lazy"
+                    sizes="(max-width: 768px) 80vw, 900px"
+                    className="object-cover group-hover:scale-105 transition-transform duration-[2000ms] ease-out opacity-90"
+                  />
                 </div>
-                <span className="font-mono text-sm opacity-40">01/03</span>
-              </div>
-            </div>
-
-            {/* Gallery Item 2 */}
-            <div className="w-[80vw] max-w-[900px] flex-shrink-0 flex flex-col justify-center">
-              <div className="relative aspect-[4/3] overflow-hidden group rough-border bg-white mb-8">
-                <Image 
-                  src="/assets/images/gallery-2.jpg" 
-                  alt="Custom commission detail" 
-                  fill 
-                  loading="lazy"
-                  sizes="(max-width: 768px) 80vw, 900px"
-                  className="object-cover group-hover:scale-105 transition-transform duration-[2000ms] ease-out opacity-90"
-                />
-              </div>
-              <div className="flex justify-between items-start">
-                <div>
-                  <h3 className="text-2xl font-serif italic">Table de Réunion Organique</h3>
-                  <p className="text-sm opacity-60 mt-2 font-mono uppercase tracking-widest">Studio Creatif</p>
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h3 className="text-2xl font-serif italic">{item.title}</h3>
+                    <p className="text-sm opacity-60 mt-2 font-mono uppercase tracking-widest">{item.location}</p>
+                  </div>
+                  <span className="font-mono text-sm opacity-40">{String(index + 1).padStart(2, '0')}/{galleryItems.length}</span>
                 </div>
-                <span className="font-mono text-sm opacity-40">02/03</span>
               </div>
-            </div>
+            ))}
 
             {/* End CTA Slide */}
             <div className="w-screen flex-shrink-0 flex flex-col justify-center items-center text-center">
