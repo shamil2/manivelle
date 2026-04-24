@@ -6,6 +6,7 @@ const contentDirectory = path.join(process.cwd(), 'content/pages')
 const workshopsDirectory = path.join(process.cwd(), 'content/workshops')
 const eventsDirectory = path.join(process.cwd(), 'content/events')
 const galleryDirectory = path.join(process.cwd(), 'content/gallery')
+const productsDirectory = path.join(process.cwd(), 'content/products')
 
 export type GalleryItem = {
   title?: string
@@ -14,6 +15,15 @@ export type GalleryItem = {
   caption?: string
   alt?: string
   location?: string
+}
+
+export type Product = {
+  name?: string
+  description?: string
+  price?: number
+  checkoutUrl?: string
+  images?: string[]
+  inStock?: boolean
 }
 
 export type Event = {
@@ -118,6 +128,22 @@ export function getGalleryContent(): GalleryItem[] {
         const fileContents = fs.readFileSync(fullPath, 'utf8')
         const { data } = matter(fileContents)
         return data as GalleryItem
+      })
+  } catch {
+    return []
+  }
+}
+
+export function getProducts(): Product[] {
+  try {
+    const files = fs.readdirSync(productsDirectory)
+    return files
+      .filter(f => f.endsWith('.md'))
+      .map(f => {
+        const fullPath = path.join(productsDirectory, f)
+        const fileContents = fs.readFileSync(fullPath, 'utf8')
+        const { data } = matter(fileContents)
+        return data as Product
       })
   } catch {
     return []
